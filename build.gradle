@@ -1,0 +1,17 @@
+buildscript {
+    dependencies {
+        classpath files('D:/progma/gogradle-0.5.4-all.jar')
+    }
+}
+
+apply plugin: 'com.github.blindpirate.gogradle'
+
+golang {
+    packagePath = 'github.com/JackTiger/demoA' // 欲构建项目的path，不是项目的磁盘路径！
+}
+
+dependencies {
+    golang {
+        build name:'github.com/JackTiger/demoB', commit:'949e4c2e23b6a615c052cf2d71a2ccdffa53d881'
+    }
+}
